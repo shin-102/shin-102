@@ -616,10 +616,6 @@ video {
   top: 1.25rem;
 }
 
-.top-0 {
-  top: 0px;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -721,14 +717,6 @@ video {
   height: 100%;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.h-1\/2 {
-  height: 50%;
-}
-
 .w-10 {
   width: 2.5rem;
 }
@@ -767,6 +755,18 @@ video {
 
 .max-w-lg {
   max-width: 32rem;
+}
+
+.max-w-xl {
+  max-width: 36rem;
+}
+
+.max-w-4xl {
+  max-width: 56rem;
+}
+
+.max-w-full {
+  max-width: 100%;
 }
 
 .flex-shrink-0 {
@@ -1044,11 +1044,6 @@ video {
   line-height: 1.625;
 }
 
-.text-black {
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity, 1));
-}
-
 .text-gray-600 {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity, 1));
@@ -1100,8 +1095,20 @@ video {
   transition-duration: 150ms;
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .duration-200 {
   transition-duration: 200ms;
+}
+
+.duration-100 {
+  transition-duration: 100ms;
 }
 
 .hover\:bg-violet-900:hover {
@@ -1109,9 +1116,18 @@ video {
   background-color: rgb(76 29 149 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:fill-violet-700:hover {
+  fill: #6d28d9;
+}
+
 .hover\:text-violet-400:hover {
   --tw-text-opacity: 1;
   color: rgb(167 139 250 / var(--tw-text-opacity, 1));
+}
+
+.hover\:text-violet-800:hover {
+  --tw-text-opacity: 1;
+  color: rgb(91 33 182 / var(--tw-text-opacity, 1));
 }
 
 .hover\:underline:hover {
@@ -1251,36 +1267,8 @@ video {
 }
 
 @media (min-width: 1536px) {
-  .\32xl\:origin-bottom {
-    transform-origin: bottom;
-  }
-
   .\32xl\:origin-top {
     transform-origin: top;
-  }
-
-  .\32xl\:scale-110 {
-    --tw-scale-x: 1.1;
-    --tw-scale-y: 1.1;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .\32xl\:scale-100 {
-    --tw-scale-x: 1;
-    --tw-scale-y: 1;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .\32xl\:scale-90 {
-    --tw-scale-x: .9;
-    --tw-scale-y: .9;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-  }
-
-  .\32xl\:scale-50 {
-    --tw-scale-x: .5;
-    --tw-scale-y: .5;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
   .\32xl\:scale-75 {
@@ -1292,14 +1280,6 @@ video {
   .\32xl\:pt-16 {
     padding-top: 4rem;
   }
-
-  .\32xl\:pt-20 {
-    padding-top: 5rem;
-  }
-}
-
-.\[\&\>\*\]\:fill-violet-800>* {
-  fill: #5b21b6;
 }
 
 .\[\&\>\*\]\:py-4>* {

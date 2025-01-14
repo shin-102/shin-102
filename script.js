@@ -1,5 +1,11 @@
-//* PROJECTS CODE SNIPPET
+//* NAV MENU
 
+document.getElementById('mobile').addEventListener('click', function() {
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('hidden');
+});
+
+//* PROJECTS CODE SNIPPET
 
 const projects = [
     {
@@ -18,7 +24,7 @@ const projects = [
     },
     {
         id: '3',
-        title: 'Social Media Campaign',
+        title: 'Aqua Fit Coach Shirt Design',
         category: 'graphic design',
         link: 'https://example.com/social-campaign',
         imageUrl: './Assets/coachm_thumbnail.png',
@@ -27,31 +33,59 @@ const projects = [
         id: '4',
         title: 'Alphabet Web Design',
         category: 'web development',
-        link: 'https://example.com/mobile-app',
+        link: 'https://drive.google.com/file/d/1y2IiwUL2wqL6_GHqwGyunNt5bCkZKvBO/view?usp=drive_link',
         imageUrl: './Assets/alphabet_webdesign_thumbnail.png',
     },
     {
         id: '5',
-        title: 'Gmedia News & Garden Expo Flyer',
+        title: 'Ayfa Sales Catalogue',
         category: 'graphic design',
-        link: 'https://example.com/mobile-app',
-        imageUrl: './Assets/gmedia_expo_thumbnail.png',
+        link: 'https://drive.google.com/file/d/1UXYMeDqh-ziyWzKg26h1EY0vdfOJXOX5/view?usp=drive_link',
+        imageUrl: './Assets/ayfa_thumbnail.png',
     },
     {
         id: '6',
         title: 'AMAG Brand Visual Identity',
         category: 'graphic design',
-        link: 'https://example.com/mobile-app',
+        link: 'https://drive.google.com/file/d/19jn3Z0T5wGgNxt5Ql71jwvaojaEAmzTb/view?usp=drive_link',
         imageUrl: './Assets/amag_brand_thumbnail.png',
     },
     {
         id: '7',
         title: 'CCINO Brand Visual Identity',
         category: 'graphic design',
-        link: 'https://example.com/mobile-app',
+        link: 'https://drive.google.com/file/d/1jL-Z3pTEzuY7dco6jYsTK2eF0a4IErvb/view?usp=drive_link',
         imageUrl: './Assets/ccino_brand_thumbnail.png',
-    },    
-    // Add more projects as needed
+    },
+    {
+         id: '8',
+         title: 'Pulse Record',
+         category: 'marketing',
+         link: 'https://drive.google.com/file/d/1K-3sfKNpz1JEVi8N0Lq49zXZcjtQ8qCT/view?usp=drive_link',
+         imageUrl: './Assets/pulse_thumbnail.png',
+     },
+     {
+        id: '9',
+        title: 'K-Beasts Dance club marketing',
+        category: 'others',
+        link: 'https://drive.google.com/file/d/1mBpKbKbbqEqo3y6OoS8gFqRlQOTxMwUb/view?usp=drive_link',
+        imageUrl: './Assets/Kbeasts_thumbnail.png',
+     },
+     {
+         id: '10',
+         title: 'Gmedia initial branding',
+         category: 'marketing',
+         link: 'https://drive.google.com/file/d/1E86eX-GWWEuB4fsxd7O-R93U2szUZq0c/view?usp=drive_link',
+         imageUrl: './Assets/gmedia_thumbnail.png',
+     },
+    /* {
+         id: ' ',
+         title: '',
+         category: '',
+         link: '',
+         imageUrl: '',
+     },
+    */ // Add more projects as needed
 ];
 
 const projectGrid = document.getElementById('project-grid');

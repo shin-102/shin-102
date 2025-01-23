@@ -6,7 +6,7 @@
   <title>Shin-102</title>
     <link href="./output.css" rel="stylesheet">
 </head>
-<body class="bg-[#242424] text-white">
+<body class="bg-[#242424] text-white font-mono">
   <header>
     <nav class="bg-[#141414] border-4 border-violet-800 fixed top-5 right-1/2 translate-x-1/2 md:translate-x-0 md:right-5 px-8 py-4 rounded-xl z-10">
       <div id="mobile" class="flex justify-center items-center lg:hidden ">
@@ -127,137 +127,252 @@
     <div class="flex flex-col gap-4 px-4 mx-auto sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold sm:text-4xl lg:text-6xl text-center">My Skills</h2>
       
-      <section class="mt-8 lg:mt-12">
+      <!-- *DEV -->
+      <section class="mt-8">
       <h3 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">Web Development</h3>
 
-      <div class="grid grid-cols-1 gap-2 lg:gap-6 mt-8 xl:gap-10 sm:grid-cols-2 lg:grid-cols-6">
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto"
-                src="./TechIcon/TypeScript.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">TypeScript</p>
-              </div>
-              
+      <div class="grid grid-cols-1 gap-2 lg:gap-6 mt-8 xl:gap-10 sm:grid-cols-2 lg:grid-cols-6 [&>*]:py-2">
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/HtmlLogo.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">HTML</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/CssSVG.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">CSS</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/JSLogo.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">JavaScript</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto"
+              src="./TechIcon/TypeScript.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">TypeScript</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Tailwind CSS.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Tailwind CSS</p>
+            </div>
+          </div>
+        </div>
+
+  
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/react.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">React JS</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Node.js.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Node.JS</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Nodemon.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Nodemon</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Deno.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Deno TS</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/MongoDB.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">MongoDB</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/BootstrapLogo.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Bootstrap</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Vite.js.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Vite</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/GitSVG.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Git</p>
             </div>
           </div>
         </div>
   
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto"
-                src="./TechIcon/Tailwind CSS.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">Tailwind CSS</p>
-              </div>
-              
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto bg-white rounded-full" src="./TechIcon/GithubLogo.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Github</p>
             </div>
           </div>
         </div>
-  
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto"
-                src="./TechIcon/react.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">React JS</p>
-              </div>
-              
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Vercel.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Vercel</p>
             </div>
           </div>
         </div>
-  
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto"
-                src="./TechIcon/GitSVG.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">Git</p>
-              </div>
-              
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Bash.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Bash</p>
             </div>
           </div>
         </div>
-  
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto rounded-full"
-                src="./TechIcon/Github-white.svg" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">GitHub</p>
-              </div>
-              
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Fedora.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Fedora Linux</p>
             </div>
           </div>
         </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Markdown.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Markdown</p>
+            </div>
+          </div>
+        </div>
+
       </div>  
       </section>
       
-      
-      <section class="mt-8 lg:mt-12">
+      <!-- *DES -->
+      <section class="mt-8">
       <h3 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">Design Skills</h3>
-      <div class="grid grid-cols-1 gap-2 lg:gap-6 mt-8 xl:gap-10 sm:grid-cols-2 lg:grid-cols-6">
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto" src="./TechIcon/FigLogo.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">Figma</p>
-              </div>
-      
+      <div class="grid grid-cols-1 gap-2 lg:gap-6 mt-8 xl:gap-10 sm:grid-cols-2 lg:grid-cols-6 [&>*]:py-2">
+        
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/FigLogo.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Figma</p>
             </div>
           </div>
         </div>
       
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto" src="./TechIcon/Affinity_Designer_2-logo.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">Affinity Designer</p>
-              </div>
-      
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Affinity_Designer_2-logo.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Affinity Designer</p>
             </div>
           </div>
         </div>
       
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto" src="./TechIcon/Affinity_Photo_V2_icon.svg.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">Affinity Photo</p>
-              </div>
-      
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Affinity_Photo_V2_icon.svg.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Affinity Photo</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Photoshop.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Adobe Photoshop</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Photoshop lightroom.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Adobe Lightroom</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Illustrator.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Adobe Illustrator</p>
             </div>
           </div>
         </div>
       
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto" src="./TechIcon/Adobe-Express-Logo-PNG-1.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">Adobe Express</p>
-              </div>
-      
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Adobe-Express-Logo-PNG-1.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Adobe Express</p>
             </div>
           </div>
         </div>
       
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto" src="./TechIcon/CanvaSVG.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">Canva</p>
-              </div>
-      
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/CanvaSVG.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Canva</p>
             </div>
           </div>
         </div>
@@ -265,42 +380,106 @@
       </div>        
       </section>
 
-      <section class="mt-8 lg:mt-12">
+      <!-- * OTher -->
+      <section class="mt-8">
       <h3 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">Other skills</h3>
-      
-      <div class="grid grid-cols-1 gap-2 lg:gap-6 mt-8 xl:gap-10 sm:grid-cols-2 lg:grid-cols-6">
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto" src="./TechIcon/DaVinci_Resolve_Studio.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">DaVinci Resolve</p>
-              </div>
-    
+      <div class="grid grid-cols-1 gap-2 lg:gap-6 mt-8 xl:gap-10 sm:grid-cols-2 lg:grid-cols-6 [&>*]:py-2">
+        
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/DaVinci_Resolve_Studio.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Davinci Resolve</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto bg-white p-1 rounded-lg" src="./TechIcon/Capcut-logo.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Capcut</p>
             </div>
           </div>
         </div>
     
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto" src="./TechIcon/WordPress.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">WordPress</p>
-              </div>
-    
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/WordPress.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">WordPress</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/WooCommerce.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">WooCommerce</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Shopify.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Shopify</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Webflow.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Webflow</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Trello.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Trello</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Jira.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Jira</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/meta-12361.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Meta Business Suite</p>
             </div>
           </div>
         </div>
     
-        <div class="overflow-hidden bg-[#141414] rounded-xl shadow">
-          <div class="p-8">
-            <div class="flex items-center">
-              <img class="flex-shrink-0 w-12 h-auto" src="./TechIcon/Logo_Google_Analytics.png" alt="" />
-              <div class="ml-5 mr-auto">
-                <p class="text-xl font-semibold">Google Analytics</p>
-              </div>
-    
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/Logo_Google_Analytics.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Google Analytics</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="overflow-hidden bg-[#141414] rounded-xl shadow flex items-center justify-center">
+          <div class="flex items-center justify-center">
+            <img class="flex-shrink-0 w-8 h-auto" src="./TechIcon/LaTeX.png" alt="" />
+            <div class="ml-5 mr-auto">
+              <p class="text-md font-semibold">Latex</p>
             </div>
           </div>
         </div>
@@ -331,15 +510,15 @@
             </svg>
           </div>
           <div class="ml-6">
-            <h3 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">Graphic Designer & Marketing Assistant</h3>
-            <h4 class="text-xl font-light sm:text-2xl lg:text-3xl">Waves Aqua Resort</h4>
-            <h5 class="text-lg text-right font-mono text-violet-800">May 2024 - June 2024 - Kenitra</h5>
+            <h3 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">Digital Marketing Freelancer</h3>
+            <h4 class="text-xl font-light sm:text-2xl lg:text-3xl">Several Companies / Clients</h4>
+            <h5 class="text-lg text-right font-mono text-violet-800">November 2022 - Present - Morocco</h5>
             <ul class="flex flex-col gap-4 list-disc mt-6 ml-6 text-lg ">
-              <li><strong>Recovered and redesigned</strong> lost visual elements to improve brand consistency</li>
-              <li><strong>In-depth research</strong> of competition and trends, via <em>social media</em> and <em>search engines</em>, which enabled more effective campaign
-              planning and execution</li>
-              <li><strong>Created</strong> social media content inventory for two affiliate accounts, with <em>Affinity Designer</em>, to ensure long-term brand
-              presence.</li>
+              <li><strong>Website development</strong>: from design using <em>Figma</em> to <em>hosting</em> and <em>coding</em>,
+                to enhance customers' online presence.</li>
+              <li><strong>Design</strong> of graphic solutions, implementation of visual brand identities, including social media
+                kits and printable
+                resources, resulting in a unified brand experience.</li>
             </ul>
           </div>
         </li>
@@ -356,13 +535,17 @@
             </svg>
           </div>
           <div class="ml-6">
-            <h3 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">Digital Marketing Freelancer</h3>
-            <h4 class="text-xl font-light sm:text-2xl lg:text-3xl">Several Companies / Clients</h4>
-            <h5 class="text-lg text-right font-mono text-violet-800">November 2022 - Present - Morocco</h5>
+            <h3 class="text-2xl font-semibold sm:text-3xl lg:text-4xl">Graphic Designer & Marketing Assistant</h3>
+            <h4 class="text-xl font-light sm:text-2xl lg:text-3xl">Waves Aqua Resort</h4>
+            <h5 class="text-lg text-right font-mono text-violet-800">May 2024 - June 2024 - Kenitra</h5>
             <ul class="flex flex-col gap-4 list-disc mt-6 ml-6 text-lg ">
-              <li><strong>Website development</strong>: from design using <em>Figma</em> to <em>hosting</em> and <em>coding</em>, to enhance customers' online presence.</li>
-              <li><strong>Design</strong> of graphic solutions, implementation of visual brand identities, including social media kits and printable
-              resources, resulting in a unified brand experience.</li>
+              <li><strong>Recovered and redesigned</strong> lost visual elements to improve brand consistency</li>
+              <li><strong>In-depth research</strong> of competition and trends, via <em>social media</em> and <em>search
+                  engines</em>, which enabled more effective campaign
+                planning and execution</li>
+              <li><strong>Created</strong> social media content inventory for two affiliate accounts, with <em>Affinity
+                  Designer</em>, to ensure long-term brand
+                presence.</li>
             </ul>
           </div>
         </li>

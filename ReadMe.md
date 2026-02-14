@@ -1,18 +1,62 @@
-# 💫 About Me:
-Front-end Developer - Graphic Designer - Digital Marketer
+<h1 align="center">shin-102</h1>
 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&size=22&pause=1000&color=FFFFFF&center=true&vCenter=true&width=600&lines=Front-end+Developer;Graphic+Designer;Digital+Marketer;Building+scalable+web+experiences" />
+</p>
 
-## 🌐 Socials:
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/neon_walid) [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/walid-hamyani-shin102) [![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/Rinkatsu_Zen) 
+<p align="center">
+  <a href="https://linkedin.com/in/walid-hamyani-shin102">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+  </a>
+  <a href="mailto:hamyaniw@gmail.com">
+    <img src="https://img.shields.io/badge/Email-111111?style=for-the-badge&logo=gmail&logoColor=white"/>
+  </a>
+</p>
 
-# 💻 Tech Stack:
-![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Markdown](https://img.shields.io/badge/markdown-%23000000.svg?style=for-the-badge&logo=markdown&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) ![NPM](https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white) ![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white) ![Affinity Designer](https://img.shields.io/badge/affinity%20desginer-%231B72BE.svg?style=for-the-badge&logo=affinity-designer&logoColor=white) ![Figma](https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.vercel.app/api?username=shin-102&theme=nightowl&hide_border=true&include_all_commits=true&count_private=false)<br/>
-![](https://nirzak-streak-stats.vercel.app/?user=shin-102&theme=nightowl&hide_border=true)<br/>
-![](https://github-readme-stats.vercel.app/api/top-langs/?username=shin-102&theme=nightowl&hide_border=true&include_all_commits=true&count_private=false&layout=compact)
+<p align="center">
+  <img src="https://img.shields.io/badge/Open%20to-Freelance%20%26%20Open%20Source%20Collaborations-0f172a?style=for-the-badge"/>
+</p>
 
-## 🏆 GitHub Trophies
-![](https://github-profile-trophy.vercel.app/?username=shin-102&theme=nightowl&no-frame=true&no-bg=true&margin-w=4)
+---
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+## About
+
+Front-end Developer · Graphic Designer · Digital Marketer  
+
+Focused on building performant, scalable and visually consistent web products.  
+Learning what is necessary to build what matters.
+
+---
+
+## Tech Stack
+
+### Core
+
+<p>
+  <img src="https://skillicons.dev/icons?i=ts,react,tailwind,nestjs,prisma,postgres" />
+</p>
+
+### Tooling
+
+<p>
+  <img src="https://skillicons.dev/icons?i=figma,vercel,netlify,git,pnpm" />
+</p>
+
+---
+
+## Development Metrics
+
+<!-- METRICS WILL BE INSERTED HERE -->
+
+---
+
+## GitHub Stats
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=shin-102&show_icons=true&theme=tokyonight&hide_border=true" height="165"/>
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=shin-102&theme=tokyonight&hide_border=true" height="165"/>
+</p>
+
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=shin-102&layout=compact&theme=tokyonight&hide_border=true"/>
+</p>

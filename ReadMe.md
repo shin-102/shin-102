@@ -46,7 +46,9 @@ Learning what is necessary to build what matters.
 
 ## Development Metrics
 
-<!-- METRICS WILL BE INSERTED HERE -->
+<p align="center">
+  <img src="/github-metrics.svg" />
+</p>
 
 ---
 

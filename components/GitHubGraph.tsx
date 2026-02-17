@@ -18,43 +18,41 @@ export function GitHubGraph() {
     fetch("https://raw.githubusercontent.com/shin-102/shin-102/main/github-metrics.json")
       .then((res) => res.json())
       .then((json) => {
-        // 1. Path correction: In your JSON, it's under user.calendar.contributionCalendar
+        // Path: json.user.calendar.contributionCalendar.weeks
         const calendar = json.user?.calendar?.contributionCalendar;
         const rawWeeks = calendar?.weeks;
 
         if (!rawWeeks || rawWeeks.length === 0) {
-          console.warn("Isocalendar data not found in JSON path: user.calendar.contributionCalendar.weeks");
+          console.warn("Calendar data not found at path: user.calendar.contributionCalendar.weeks");
           setLoading(false);
           return;
         }
 
-        // 2. Map the data structure
-        // Lowlighter returns { contributionDays: [{ color: "#..." }] }
+        const colorToLevel: Record<string, number> = {
+          "#ebedf0": 0,
+          "#9be9a8": 1,
+          "#40c463": 2,
+          "#30a14e": 3,
+          "#216e39": 4,
+        };
+
         const formattedWeeks = rawWeeks.map((week: any, wIndex: number) => {
           return week.contributionDays.map((day: any, dIndex: number) => {
-            // Convert hex colors to contribution levels 0-4
-            // (Since your JSON uses colors like #9be9a8 instead of levels)
-            const colorToLevel: Record<string, number> = {
-              "#ebedf0": 0,
-              "#9be9a8": 1,
-              "#40c463": 2,
-              "#30a14e": 3,
-              "#216e39": 4,
-            };
-
+            // FIX 1: The JSON days don't have a `date` field — only `color`.
+            // Use a generated key as fallback (always, not just when date is missing).
             return {
-              date: day.date || `w${wIndex}-d${dIndex}`, // Fallback if date is missing
-              level: colorToLevel[day.color] ?? 0
+              date: day.date ?? `w${wIndex}-d${dIndex}`,
+              level: colorToLevel[day.color] ?? 0,
             };
           });
         });
 
         setWeeks(formattedWeeks);
 
-        // 3. Set Total contributions
-        // Using the computed count from your JSON
-        const totalCount = json.contributionsCollection?.totalCommitContributions || 0;
-        setTotal(totalCount);
+        // FIX 2: The total is under json.user.contributionsCollection, not json.contributionsCollection
+        const totalPublic  = json.user?.contributionsCollection?.totalCommitContributions ?? 0;
+        const totalPrivate = json.user?.contributionsCollection?.restrictedContributionsCount ?? 0;
+        setTotal(totalPublic + totalPrivate);
 
         setLoading(false);
       })
@@ -104,7 +102,7 @@ export function GitHubGraph() {
             <div className="flex gap-[4px]">
               {weeks.map((week, weekIndex) => (
                 <div key={weekIndex} className="flex flex-col gap-[4px]">
-                  {week.map((day) => (
+                  {week.map((day, dayIndex) => (
                     <motion.div
                       key={day.date}
                       initial={{ scale: 0, opacity: 0 }}
@@ -113,11 +111,11 @@ export function GitHubGraph() {
                         type: "spring",
                         stiffness: 260,
                         damping: 20,
-                        delay: weekIndex * 0.003
+                        delay: weekIndex * 0.003,
                       }}
                       whileHover={{ scale: 1.4, zIndex: 10 }}
                       className={`w-3 h-3 rounded-[2px] ${getColor(day.level)} transition-colors cursor-default`}
-                      title={`${day.date}`}
+                      title={day.date}
                     />
                   ))}
                 </div>

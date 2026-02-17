@@ -9,7 +9,7 @@ export function Hero() {
   const socialLinks = [
     { icon: Github, href: portfolio.github, label: "GitHub" },
     { icon: Linkedin, href: portfolio.linkedin, label: "LinkedIn" },
-    { icon: Twitter, href: portfolio.twitter, label: "Twitter" },
+    // { icon: Twitter, href: portfolio.twitter, label: "Twitter" },
   ];
 
   return (

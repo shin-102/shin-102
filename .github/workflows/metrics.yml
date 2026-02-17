@@ -18,6 +18,8 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Africa/Casablanca
 
+          config_output: json
+
           # Contribution calendar
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
@@ -38,3 +40,6 @@ jobs:
           plugin_lines: yes
 
           config_display: large
+
+          # Add this line to your metrics.yml under 'with:'
+          output_action: commit # This ensures the file is saved to your repo

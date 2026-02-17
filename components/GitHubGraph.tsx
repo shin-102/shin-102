@@ -18,26 +18,48 @@ export function GitHubGraph() {
     fetch("https://raw.githubusercontent.com/shin-102/shin-102/main/github-metrics.json")
       .then((res) => res.json())
       .then((json) => {
-        const iso = json.plugins?.isocalendar;
-        if (!iso || !iso.days) {
-          console.error("Isocalendar data not found in JSON");
+        // 1. Path correction: In your JSON, it's under user.calendar.contributionCalendar
+        const calendar = json.user?.calendar?.contributionCalendar;
+        const rawWeeks = calendar?.weeks;
+
+        if (!rawWeeks || rawWeeks.length === 0) {
+          console.warn("Isocalendar data not found in JSON path: user.calendar.contributionCalendar.weeks");
+          setLoading(false);
           return;
         }
 
-        // The metrics plugin provides a flat list of days.
-        // We chunk them into groups of 7 to create the "week" columns.
-        const days = iso.days as ContributionDay[];
-        const chunkedWeeks: ContributionDay[][] = [];
-        for (let i = 0; i < days.length; i += 7) {
-          chunkedWeeks.push(days.slice(i, i + 7));
-        }
+        // 2. Map the data structure
+        // Lowlighter returns { contributionDays: [{ color: "#..." }] }
+        const formattedWeeks = rawWeeks.map((week: any, wIndex: number) => {
+          return week.contributionDays.map((day: any, dIndex: number) => {
+            // Convert hex colors to contribution levels 0-4
+            // (Since your JSON uses colors like #9be9a8 instead of levels)
+            const colorToLevel: Record<string, number> = {
+              "#ebedf0": 0,
+              "#9be9a8": 1,
+              "#40c463": 2,
+              "#30a14e": 3,
+              "#216e39": 4,
+            };
 
-        setWeeks(chunkedWeeks);
-        setTotal(json.computed?.contributions || 0);
+            return {
+              date: day.date || `w${wIndex}-d${dIndex}`, // Fallback if date is missing
+              level: colorToLevel[day.color] ?? 0
+            };
+          });
+        });
+
+        setWeeks(formattedWeeks);
+
+        // 3. Set Total contributions
+        // Using the computed count from your JSON
+        const totalCount = json.contributionsCollection?.totalCommitContributions || 0;
+        setTotal(totalCount);
+
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Error loading GitHub data:", err);
+        console.error("Fetch error:", err);
         setLoading(false);
       });
   }, []);
@@ -45,9 +67,9 @@ export function GitHubGraph() {
   const getColor = (level: number | string) => {
     const colors: Record<string, string> = {
       "0": "bg-zinc-800",
-      "1": "bg-emerald-900/50",
-      "2": "bg-emerald-700/70",
-      "3": "bg-emerald-500/90",
+      "1": "bg-emerald-900/40",
+      "2": "bg-emerald-700/60",
+      "3": "bg-emerald-500/80",
       "4": "bg-emerald-400",
     };
     return colors[level.toString()] || "bg-zinc-800";
@@ -55,13 +77,13 @@ export function GitHubGraph() {
 
   if (loading) {
     return (
-      <div className="py-20 px-4 max-w-7xl mx-auto">
+      <div className="py-20 px-4 max-w-7xl mx-auto text-center">
         <div className="h-48 w-full animate-pulse bg-white/5 rounded-3xl border border-white/10" />
+        <p className="mt-4 text-zinc-500 text-sm">Fetching your GitHub stats...</p>
       </div>
     );
   }
 
-  // If loading finished but no data, don't crash the site
   if (weeks.length === 0) return null;
 
   return (
@@ -69,43 +91,44 @@ export function GitHubGraph() {
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">GitHub Activity</h2>
           <p className="text-zinc-400">{total} contributions in the last year</p>
         </motion.div>
 
-        <GlassCard className="overflow-x-auto p-6">
+        <GlassCard className="overflow-x-auto p-6 bg-zinc-900/30 backdrop-blur-md">
           <div className="min-w-max">
-            <div className="flex gap-[3px]">
+            <div className="flex gap-[4px]">
               {weeks.map((week, weekIndex) => (
-                <div key={weekIndex} className="flex flex-col gap-[3px]">
+                <div key={weekIndex} className="flex flex-col gap-[4px]">
                   {week.map((day) => (
                     <motion.div
                       key={day.date}
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
+                      initial={{ scale: 0, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
                       transition={{
                         type: "spring",
-                        stiffness: 300,
+                        stiffness: 260,
                         damping: 20,
-                        delay: weekIndex * 0.005
+                        delay: weekIndex * 0.003
                       }}
-                      whileHover={{ scale: 1.5, zIndex: 10 }}
-                      className={`w-3 h-3 rounded-sm ${getColor(day.level)} transition-colors cursor-pointer`}
-                      title={`${day.date}: Level ${day.level}`}
+                      whileHover={{ scale: 1.4, zIndex: 10 }}
+                      className={`w-3 h-3 rounded-[2px] ${getColor(day.level)} transition-colors cursor-default`}
+                      title={`${day.date}`}
                     />
                   ))}
                 </div>
               ))}
             </div>
 
-            <div className="flex items-center gap-2 mt-6 text-[10px] text-zinc-500 uppercase tracking-widest">
+            <div className="flex items-center gap-3 mt-8 text-[10px] text-zinc-500 font-medium uppercase tracking-tighter">
               <span>Less</span>
               <div className="flex gap-1">
                 {[0, 1, 2, 3, 4].map((lvl) => (
-                  <div key={lvl} className={`w-2.5 h-2.5 rounded-sm ${getColor(lvl)}`} />
+                  <div key={lvl} className={`w-2.5 h-2.5 rounded-[1px] ${getColor(lvl)}`} />
                 ))}
               </div>
               <span>More</span>

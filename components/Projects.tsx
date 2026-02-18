@@ -3,12 +3,13 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
 import { GlassCard } from "./GlassCard";
-import { projects, getFeaturedProject } from "@/lib/data";
+import { projects } from "@/lib/data"; // Changed to use the raw array
 import Image from "next/image";
 
 export function Projects() {
-  const featured = getFeaturedProject();
-  const otherProjects = projects.filter(p => p.id !== featured.id);
+  // Identify all featured projects and those that are not
+  const featuredProjects = projects.filter(p => p.featured);
+  const otherProjects = projects.filter(p => !p.featured);
 
   return (
     <section id="projects" className="py-20 px-4">
@@ -26,61 +27,63 @@ export function Projects() {
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[350px]">
 
-          {/* Featured Project - Large Preview */}
-          <GlassCard
-            className="md:col-span-2 lg:row-span-2 group overflow-hidden"
-            glowEffect
-          >
-            <div className="h-full flex flex-col">
-              {/* Image Preview Area */}
-              <div className="relative h-48 md:h-64 w-full mb-4 overflow-hidden rounded-xl border border-white/10">
-                {featured.image && (
-                  <Image
-                    src={featured.image}
-                    alt={featured.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent" />
-              </div>
-
-              <div className="flex-1 px-2">
-                <div className="flex items-start justify-between mb-4">
-                  <span className="px-3 py-1 text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full">
-                    Featured Project
-                  </span>
-                  <div className="flex gap-2">
-                    {featured.github && (
-                      <a href={featured.github} target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-lg transition-colors">
-                        <Github className="w-4 h-4" />
-                      </a>
-                    )}
-                    {featured.link && (
-                      <a href={featured.link} target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-lg transition-colors">
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    )}
-                  </div>
+          {/* Map through all Featured Projects using your original Large Preview styling */}
+          {featuredProjects.map((project) => (
+            <GlassCard
+              key={project.id}
+              className="md:col-span-2 lg:row-span-2 group overflow-hidden"
+              glowEffect
+            >
+              <div className="h-full flex flex-col">
+                <div className="relative h-48 md:h-64 w-full mb-4 overflow-hidden rounded-xl border border-white/10">
+                  {project.image && (
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900/80 to-transparent" />
                 </div>
-                <h3 className="text-2xl font-bold mb-3">{featured.title}</h3>
-                <p className="text-zinc-400 mb-6 text-sm md:text-base line-clamp-2 md:line-clamp-none">
-                  {featured.description}
-                </p>
-              </div>
 
-              <div className="flex flex-wrap gap-2 px-2 pb-2">
-                {featured.tags.map((tag) => (
-                  <span key={tag} className="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-lg">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </GlassCard>
+                <div className="flex-1 px-2">
+                  <div className="flex items-start justify-between mb-4">
+                    <span className="px-3 py-1 text-xs font-semibold bg-purple-500/20 text-purple-300 border border-purple-500/30 rounded-full">
+                      Featured Project
+                    </span>
+                    <div className="flex gap-2">
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                          <Github className="w-4 h-4" />
+                        </a>
+                      )}
+                      {project.link && (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                  <p className="text-zinc-400 mb-6 text-sm md:text-base line-clamp-2 md:line-clamp-none">
+                    {project.description}
+                  </p>
+                </div>
 
-          {/* Other Projects */}
-          {otherProjects.slice(0, 6).map((project, index) => (
+                <div className="flex flex-wrap gap-2 px-2 pb-2">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-lg">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </GlassCard>
+          ))}
+
+          {/* Other Projects - Styling preserved exactly */}
+          {otherProjects.slice(0, 8).map((project, index) => (
             <ProjectCard key={project.id} project={project} index={index} />
           ))}
         </div>
@@ -90,15 +93,14 @@ export function Projects() {
 }
 
 function ProjectCard({ project, index }: { project: any; index: number }) {
-  // Logic to vary the grid layout for visual interest
+  // Preserved Span Logic
   const span = index === 0 || index === 3 ? "lg:col-span-2" : "";
 
   return (
     <GlassCard className={`group overflow-hidden ${span}`}>
       <div className="h-full flex flex-col">
-        {/* Card Background Image with Overlay */}
         {project.image && (
-          <div className="absolute inset-0 z-0 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+          <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-25 transition-opacity duration-500">
             <Image
               src={project.image}
               alt=""

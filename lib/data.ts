@@ -43,11 +43,31 @@ export const portfolio = {
 
 export const projects: Project[] = [
   {
+    id: "decipher-agency",
+    title: "Decipher Agency | Digital Marketing",
+    description: "Digital marketing agency specializing in Brand Identity, Marketing Strategies, and Web Development.",
+    tags: ["React", "TailwindCSS"],
+    featured: true,
+    complexity: 8,
+    link: "https://decipher-agency.com",
+    image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fdecipher-agency.com/large/",
+  },
+  {
+    id: "voiturelink",
+    title: "VoitureLink | Car Rental Management System",
+    description: "SaaS platform for car rental management.",
+    tags: ["React", "TailwindCSS", "TypeScript", "TanStack Query", "Radix UI primitives", "NestJS", "Prisma", "PostgreSQL", "Puppeteer"],
+    featured: true,
+    complexity: 10,
+    link: "https://voiturelink.com",
+    image: "https://res.cloudinary.com/dpotig7bw/image/upload/v1771380337/www.voiturelink.com_2026-02_VoitureLink_cdx2dq.png",
+  },
+  {
     id: "a3rab-ecommerce",
     title: "A3rab E-commerce",
     description: "Modern shopping experience with dynamic filtering and Sanity CMS integration.",
     tags: ["React", "TailwindCSS", "Sanity"],
-    featured: true,
+    featured: false,
     complexity: 9,
     link: "https://a3rab.vercel.app",
     image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fa3rab.vercel.app/large/",
@@ -215,6 +235,6 @@ export const skills: Skill[] = [
   // { name: "Google Analytics", category: "other", icon: "/icons/Logo_Google_Analytics.png" },
 ];
 
-export const getFeaturedProject = (): Project => {
-  return projects.find(p => p.featured) || projects[0];
+export const getFeaturedProjects = (): Project[] => {
+  return projects.filter(p => p.featured);
 };

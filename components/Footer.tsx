@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Heart } from "lucide-react";
+import { Music } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,7 +17,7 @@ export function Footer() {
         >
           <p className="text-zinc-500 text-sm flex items-center gap-2">
             Built with
-            <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
+            <Music className="w-8 h-8 text-violet-500 animate-pulse" />
             using Next.js, Tailwind & Framer Motion
           </p>
           <p className="text-zinc-500 text-sm">

@@ -40,17 +40,17 @@ export function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!validate()) return;
 
     setIsSubmitting(true);
-    
+
     // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     // TODO: Integrate with EmailJS or API route
     console.log("Form submitted:", formData);
-    
+
     setIsSubmitting(false);
     setFormData({ name: "", email: "", message: "" });
     alert("Message sent! (This is a demo - integrate with your backend)");
@@ -94,7 +94,7 @@ export function ContactForm() {
                 className={`w-full px-4 py-3 rounded-xl bg-white/5 border ${
                   errors.name ? "border-red-500" : "border-white/10"
                 } focus:border-white/30 focus:outline-none transition-colors`}
-                placeholder="John Doe"
+                placeholder="Full Name please"
               />
               {errors.name && (
                 <motion.p
@@ -120,7 +120,7 @@ export function ContactForm() {
                 className={`w-full px-4 py-3 rounded-xl bg-white/5 border ${
                   errors.email ? "border-red-500" : "border-white/10"
                 } focus:border-white/30 focus:outline-none transition-colors`}
-                placeholder="john@example.com"
+                placeholder="you@domain.tls"
               />
               {errors.email && (
                 <motion.p

@@ -26,9 +26,6 @@ export function Hero() {
           <p className="text-xl md:text-2xl text-zinc-400 mb-4">
             {portfolio.title}
           </p>
-          <p className="text-lg text-zinc-500 max-w-2xl mx-auto mb-12">
-            {portfolio.bio}
-          </p>
         </motion.div>
 
         <motion.div

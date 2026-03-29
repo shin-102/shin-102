@@ -21,7 +21,7 @@ export function CurrentFocus() {
       title: "Building",
       items: [
         "AI builders testing",
-        "Electron Desktop Applications,
+        "Electron Desktop Applications",
         "Spline 3D elements",
       ],
       color: "from-emerald-500 to-green-500",

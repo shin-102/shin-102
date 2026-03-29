@@ -1,15 +1,19 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Github, ExternalLink, ChevronUp, ChevronDown } from "lucide-react";
 import { GlassCard } from "./GlassCard";
-import { projects } from "@/lib/data"; // Changed to use the raw array
+import { projects } from "@/lib/data";
 import Image from "next/image";
 
 export function Projects() {
+  const [isExpanded, setIsExpanded] = useState(false);
   // Identify all featured projects and those that are not
   const featuredProjects = projects.filter(p => p.featured);
   const otherProjects = projects.filter(p => !p.featured);
+
+  const visibleOtherProjects = isExpanded ? otherProjects : otherProjects.slice(0, 4);
 
   return (
     <section id="projects" className="py-20 px-4">
@@ -82,11 +86,41 @@ export function Projects() {
             </GlassCard>
           ))}
 
-          {/* Other Projects - Styling preserved exactly */}
-          {otherProjects.slice(0, 8).map((project, index) => (
-            <ProjectCard key={project.id} project={project} index={index} />
-          ))}
+          {/* Other Projects with Animation */}
+          <AnimatePresence mode="popLayout">
+            {visibleOtherProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3, delay: index * 0.05 }}
+                className={index === 0 || index === 3 ? "lg:col-span-2" : ""}
+              >
+                <ProjectCard project={project} index={index} />
+              </motion.div>
+            ))}
+          </AnimatePresence>
         </div>
+
+        {/* 3. The Expand Button */}
+        {otherProjects.length > 4 && (
+          <div className="mt-12 flex justify-center">
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="group flex items-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all duration-300"
+            >
+              <span className="font-medium">
+                {isExpanded ? "Show Less" : `View All Projects (${projects.length})`}
+              </span>
+              {isExpanded ? (
+                <ChevronUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
+              ) : (
+                <ChevronDown className="w-4 h-4 group-hover:translate-y-1 transition-transform" />
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -97,7 +131,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
   const span = index === 0 || index === 3 ? "lg:col-span-2" : "";
 
   return (
-    <GlassCard className={`group overflow-hidden ${span}`}>
+    <GlassCard className={`group overflow-hidden w-full h-full ${span}`}>
       <div className="h-full flex flex-col">
         {project.image && (
           <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-25 transition-opacity duration-500">

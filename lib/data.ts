@@ -63,6 +63,16 @@ export const projects: Project[] = [
     image: "https://res.cloudinary.com/dpotig7bw/image/upload/v1771380337/www.voiturelink.com_2026-02_VoitureLink_cdx2dq.png",
   },
   {
+    id: "odsy",
+    title: "ODSY - Org Daily Sync",
+    description: "Productivity Application with offline data storage and online synchronization to web platform.",
+    tags: ["Electron", "React", "Express", "Prisma"],
+    featured: false,
+    complexity: 7,
+    link: "https://odsy-web.vercel.app/",
+    image: "https://res.cloudinary.com/dpotig7bw/image/upload/v1774212113/odsy-web.vercel.app_2026-03_ODSY_Web_Platform_csk9nr.png",
+  },
+  {
     id: "a3rab-ecommerce",
     title: "A3rab E-commerce",
     description: "Modern shopping experience with dynamic filtering and Sanity CMS integration.",
@@ -114,6 +124,33 @@ export const projects: Project[] = [
     image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Foptique-demarco.vercel.app/large/",
   },
   {
+    id: "aqua-fit-posts",
+    title: "Waves AquaFit Content",
+    description: "Bundle of social media posts for Fitness branch",
+    tags: ["Social Media", "Content Creation", "Instagram"],
+    featured: false,
+    complexity: 6,
+    image: "https://res.cloudinary.com/dpotig7bw/image/upload/v1769300461/Waves-Carousel_post_3_egv9zu.png",
+  },
+  {
+    id: "aqua-game-posts",
+    title: "Waves GameEdge Content",
+    description: "Visual Campaign for social media to reach community",
+    tags: ["Social Media", "Content Creation", "Instagram"],
+    featured: false,
+    complexity: 4,
+    image: "https://res.cloudinary.com/dpotig7bw/image/upload/v1769300520/Instagram_post_-_27_kscu4c.png",
+  },
+  {
+    id: "aqua-resort-brand",
+    title: "Waves AquaResort Brand",
+    description: "Design of physical assets including billboards, apparel, and advertising posters.",
+    tags: ["Apparel", "Print", "Marketing"],
+    featured: false,
+    complexity: 6,
+    image: "https://res.cloudinary.com/dpotig7bw/image/upload/v1769300540/Group_30_psivru.png",
+  },
+  {
     id: "alphabet-landing",
     title: "Alphabet Landing Page",
     description: "High-conversion capture page designed to maximize lead engagement.",
@@ -144,13 +181,14 @@ export const projects: Project[] = [
     image: "https://res.cloudinary.com/dpotig7bw/image/upload/v1769300756/AMAG_hgg2js.png",
   },
   {
-    id: "aqua-fit-branding",
-    title: "Waves Aqua Resort Brand",
-    description: "Design of physical assets including billboards, apparel, and advertising posters.",
-    tags: ["Apparel", "Print", "Marketing"],
+    id: "rayz",
+    title: "RAYZ Proposition",
+    description: "Free proposition to Rayz Eyewear",
+    tags: ["Branding", "Graphic Design"],
     featured: false,
-    complexity: 5,
-    image: "https://res.cloudinary.com/dpotig7bw/image/upload/v1769300540/Group_30_psivru.png",
+    complexity: 2,
+    link: "https://res.cloudinary.com/dpotig7bw/image/upload/v1769300767/RAYZ_Eyewear_prototype_offer_xxotmh.png",
+    image: "https://res.cloudinary.com/dpotig7bw/image/upload/v1769300767/RAYZ_Eyewear_prototype_offer_xxotmh.png",
   },
   {
     id: "omri-compta",
@@ -167,12 +205,12 @@ export const projects: Project[] = [
 
 export const experiences: Experience[] = [
   {
-    company: "Freelance Web & Digital Marketing",
-    position: "Digital Marketing Freelancer",
-    period: "Nov 2022 – Feb 2023",
+    company: "Algorithmics Kenitra",
+    position: "Computer Science and Game Development Instructor",
+    period: "Apr 2025 – Present",
     description: `
-      Website development from design (Figma) to hosting and coding to enhance online presence.
-      Visual brand identity design including social media kits and print resources.
+      • Instructed Python using Visual Studio Code, from basic syntax to OOP and PyQT.
+      • Facilitated game design modules on Roblox Studio, through Lua scripting and 3D environment.
     `,
   },
   {
@@ -180,11 +218,20 @@ export const experiences: Experience[] = [
     position: "Graphic Designer & Marketing Assistant",
     period: "May 2024 – Jun 2024",
     description: `
-      Redesigned visual elements to improve brand consistency.
-      Social media trends research and campaign planning.
-      Created content inventory for affiliate accounts using Affinity Designer.
+      • Redesigned visual elements to improve brand consistency.
+      • Social media trends research and campaign planning.
+      • Created content inventory for affiliate accounts using Affinity Designer.
     `,
   },
+  {
+    company: "Freelance Web & Digital Marketing",
+    position: "Digital Marketing Freelancer",
+    period: "Nov 2022 – Feb 2023",
+    description: `
+      • Website development from design (Figma) to hosting and coding to enhance online presence.
+      • Visual brand identity design including social media kits and print resources.
+    `,
+  }
 ];
 
 
@@ -209,7 +256,7 @@ export const skills: Skill[] = [
   { name: "Figma", category: "design", icon: "/icons/FigLogo.png" },
   { name: "Affinity Designer", category: "design", icon: "/icons/Affinity_Designer_2-logo.png" },
   { name: "Affinity Photo", category: "design", icon: "/icons/Affinity_Photo_V2_icon.svg.png" },
-  { name: "Adobe Photoshop", category: "design", icon: "/icons/Photoshop.png" },
+  // { name: "Adobe Photoshop", category: "design", icon: "/icons/Photoshop.png" },
   { name: "Adobe Illustrator", category: "design", icon: "/icons/Illustrator.png" },
   { name: "Adobe Lightroom", category: "design", icon: "/icons/Photoshop lightroom.png" },
   { name: "Adobe Express", category: "design", icon: "/icons/Adobe-Express-Logo-PNG-1.png" },

@@ -1,6 +1,6 @@
 name: Metrics
 on:
-  schedule: [{cron: "0 */12 * * *"}]
+  schedule: [{cron: "0 0 * * 0"}]  # Every Sunday at midnight UTC
   workflow_dispatch:
   push:
     branches: [main]
@@ -41,5 +41,5 @@ jobs:
 
           config_display: large
 
-          # Add this line to your metrics.yml under 'with:'
-          output_action: commit # This ensures the file is saved to your repo
+          output_action: gist               # ← store in a Gist, not a commit
+          committer_gist: ${{ secrets.METRICS_GIST }}  # ← Gist ID goes here

@@ -11,7 +11,7 @@ export function GitHubGraph() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/shin-102/shin-102/main/github-metrics.json")
+    fetch("https://gist.githubusercontent.com/shin-102/310575b0eb38f862eb7990cf83c0280a/raw/github-metrics.json")
       .then((res) => res.json())
       .then((json) => {
         // The isocalendar plugin outputs a rendered SVG — use that directly

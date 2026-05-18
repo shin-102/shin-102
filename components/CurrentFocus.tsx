@@ -10,6 +10,7 @@ export function CurrentFocus() {
       icon: BookOpen,
       title: "Learning",
       items: [
+        "Vue frontend framework",
         "Caching",
         "PostgreSQL best practices",
         "Backend with NestJS",
@@ -20,9 +21,8 @@ export function CurrentFocus() {
       icon: TrendingUp,
       title: "Building",
       items: [
-        "AI builders testing",
+        "Testing AI builders",
         "Electron Desktop Applications",
-        "Spline 3D elements",
       ],
       color: "from-emerald-500 to-green-500",
     },
@@ -31,6 +31,7 @@ export function CurrentFocus() {
       title: "Exploring",
       items: [
         "New features on Affinity, by Canva",
+        "Cavalry, the new Motion Design Tool by Canva",
         "Advanced animation techniques on DaVinci Resolve",
         "Payment Processors other than Stripe like Paddle",
       ],

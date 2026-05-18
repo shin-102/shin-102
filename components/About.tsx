@@ -25,7 +25,7 @@ export function About() {
   ];
 
   return (
-    <section className="py-20 px-4">
+    <section id="about" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,15 +64,24 @@ export function About() {
               <h3 className="text-2xl font-bold mb-4 text-emerald-400">What I Do</h3>
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-semibold text-zinc-200 mb-2">💻 Web Development</h4>
+                  <h4 className="font-semibold text-zinc-200 mb-2">
+                    <span className="inline-flex w-3 h-3 me-3 bg-green-500 rounded-full animate-glow duration-200"></span>
+                    Web Development
+                  </h4>
                   <p className="text-sm text-zinc-400">Building responsive, performant applications with React, Next.js, and modern web technologies.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-zinc-200 mb-2">🎨 Brand Design</h4>
+                  <h4 className="font-semibold text-zinc-200 mb-2">
+                    <span className="inline-flex w-3 h-3 me-3 bg-green-500 rounded-full animate-glow duration-200"></span>
+                    Brand Design
+                  </h4>
                   <p className="text-sm text-zinc-400">Creating cohesive visual identities using Figma, Affinity Designer, and Adobe Creative Suite.</p>
                 </div>
                 <div>
-                  <h4 className="font-semibold text-zinc-200 mb-2">📈 Digital Marketing</h4>
+                  <h4 className="font-semibold text-zinc-200 mb-2">
+                    <span className="inline-flex w-3 h-3 me-3 bg-green-500 rounded-full animate-glow duration-200"></span>
+                    Digital Marketing
+                  </h4>
                   <p className="text-sm text-zinc-400">Developing strategies that combine technical expertise with marketing insights for measurable growth.</p>
                 </div>
               </div>

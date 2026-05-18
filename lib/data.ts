@@ -200,10 +200,50 @@ export const projects: Project[] = [
     link: "https://shin-102.github.io/Omri-Compta/",
     image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fshin-102.github.io%2FOmri-Compta%2F/large/",
   },
+  {
+    id: "dulcia-cupcakes",
+    title: "Dulcia Cupcakes",
+    description: "A baking side business, from a Lovable prototype to a React app powered by Supabase",
+    tags: ["React", "Supabase", "TanStack Query"],
+    featured: false,
+    complexity: 7,
+    link: "https://dulcia-cupcakes.netlify.app",
+    image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fdulcia-cupcakes.netlify.app/large/",
+  },
+  {
+    id: "la-monaca-di-leonardo-davinci",
+    title: "La Monaca Di Leonardo DaVinci",
+    description: "A gated wiki platform for a highly niche audience, featuring a Sanity-powered content management system and Next.js, with user authentication backed by Prisma and PostgreSQL.",
+    tags: ["Next.js", "Sanity", "Prisma", "PostgreSQL"],
+    featured: false,
+    complexity: 8,
+    link: "https://www.lamonacadileonardodavinci.com",
+    image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.lamonacadileonardodavinci.com/large/",
+  },
+  {
+    id: "firescent",
+    title: "FireScent",
+    description: "A fully functional e-commerce platform equipped with a dedicated Admin CMS, built using React and powered by Firebase Firestore.",
+    tags: ["React", "Firestore", "Firebase"],
+    featured: false,
+    complexity: 7,
+    link: "https://firescent.netlify.app",
+    image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Ffirescent.netlify.app/large/",
+  },
 ];
 
 
 export const experiences: Experience[] = [
+  {
+    company: "Decipher Agency",
+    position: "Technical Manager",
+    period: "Present",
+    description: `
+      • Hands-on development and architecture, maintaining high standards across all client projects.
+      • Shaping company service roadmap and marketing direction to maximize leads potential.
+      • Constantly evolving current offers to ensure the most effective digital solutions in the Moroccan market.
+    `,
+  },
   {
     company: "Algorithmics Kenitra",
     position: "Computer Science and Game Development Instructor",
@@ -240,6 +280,8 @@ export const skills: Skill[] = [
   { name: "React", category: "frontend", icon: "/icons/react.png" },
   { name: "TypeScript", category: "frontend", icon: "/icons/TypeScript.png" },
   { name: "Tailwind CSS", category: "frontend", icon: "/icons/Tailwind CSS.png" },
+  { name: "Next.js", category: "frontend", icon: "/icons/Next.js.png" },
+  { name: "Radix UI", category: "frontend", icon: "/icons/Radix.webp" },
   // { name: "Bootstrap", category: "frontend", icon: "/icons/BootstrapLogo.png" },
   // { name: "Sass", category: "frontend", icon: "/icons/Sass.png" },
 
@@ -249,37 +291,42 @@ export const skills: Skill[] = [
   { name: "Nest.js", category: "backend", icon: "/icons/Nest.js.png" },
   { name: "Prisma", category: "backend", icon: "/icons/prisma-svgrepo-com.png" },
   { name: "PostgreSQL", category: "backend", icon: "/icons/PostgresSQL.png" },
+  { name: "Sanity Studio", category: "backend", icon: "/icons/Sanity.png" },
+  { name: "Firebase", category: "backend", icon: "/icons/Firebase.png" },
   // { name: "Deno", category: "backend", icon: "/icons/Deno.png" },
   // { name: "MongoDB", category: "backend", icon: "/icons/MongoDB.png" },
 
   // Design Skills
   { name: "Figma", category: "design", icon: "/icons/FigLogo.png" },
-  { name: "Affinity Designer", category: "design", icon: "/icons/Affinity_Designer_2-logo.png" },
-  { name: "Affinity Photo", category: "design", icon: "/icons/Affinity_Photo_V2_icon.svg.png" },
+  { name: "Affinity", category: "design", icon: "/icons/Affinity.jpeg" },
+  // { name: "Affinity Designer", category: "design", icon: "/icons/Affinity_Designer_2-logo.png" },
+  // { name: "Affinity Photo", category: "design", icon: "/icons/Affinity_Photo_V2_icon.svg.png" },
   // { name: "Adobe Photoshop", category: "design", icon: "/icons/Photoshop.png" },
-  { name: "Adobe Illustrator", category: "design", icon: "/icons/Illustrator.png" },
-  { name: "Adobe Lightroom", category: "design", icon: "/icons/Photoshop lightroom.png" },
-  { name: "Adobe Express", category: "design", icon: "/icons/Adobe-Express-Logo-PNG-1.png" },
+  // { name: "Adobe Illustrator", category: "design", icon: "/icons/Illustrator.png" },
+  // { name: "Adobe Lightroom", category: "design", icon: "/icons/Photoshop lightroom.png" },
+  // { name: "Adobe Express", category: "design", icon: "/icons/Adobe-Express-Logo-PNG-1.png" },
   { name: "Canva", category: "design", icon: "/icons/CanvaSVG.png" },
 
   // Tools & Workflow
-  { name: "Vite", category: "tools", icon: "/icons/Vite.js.png" },
-  // { name: "Git", category: "tools", icon: "/icons/GitSVG.png" },
-  // { name: "GitHub", category: "tools", icon: "/icons/GithubLogo.png" },
+  // { name: "Vite", category: "tools", icon: "/icons/Vite.js.png" },
   // { name: "Vercel", category: "tools", icon: "/icons/Vercel.png" },
-  { name: "Bash", category: "tools", icon: "/icons/Bash.png" },
-  // { name: "Fedora Linux", category: "tools", icon: "/icons/Fedora.png" },
+  // { name: "Bash", category: "tools", icon: "/icons/Bash.png" },
+  { name: "Trello", category: "tools", icon: "/icons/Trello.png" },
+  { name: "ClickUp", category: "tools", icon: "/icons/ClickUp.png" },
+  { name: "Zed", category: "tools", icon: "/icons/Zed.png" },
+  { name: "Electron", category: "tools", icon: "/icons/Electron.png" },
   // { name: "VS Code", category: "tools", icon: "/icons/Visual Studio Code (VS Code).png" },
 
   // Marketing / Other
-  // { name: "DaVinci Resolve", category: "other", icon: "/icons/DaVinci_Resolve_Studio.png" },
+  { name: "DaVinci Resolve", category: "other", icon: "/icons/DaVinci_Resolve_Studio.png" },
   // { name: "CapCut", category: "other", icon: "/icons/Capcut-logo.png" },
   { name: "WordPress", category: "other", icon: "/icons/WordPress.png" },
   { name: "Shopify", category: "other", icon: "/icons/Shopify.png" },
-  // { name: "Trello", category: "other", icon: "/icons/Trello.png" },
   // { name: "Jira", category: "other", icon: "/icons/Jira.png" },
-  // { name: "Meta Business", category: "other", icon: "/icons/meta-12361.png" },
-  // { name: "Google Analytics", category: "other", icon: "/icons/Logo_Google_Analytics.png" },
+  { name: "Meta Business", category: "other", icon: "/icons/meta-12361.png" },
+  { name: "Google Analytics", category: "other", icon: "/icons/Logo_Google_Analytics.png" },
+  { name: "SEMRUSH", category: "other", icon: "/icons/SEMrush.jpg" },
+  { name: "Ahrefs", category: "other", icon: "/icons/Ahrefs.png" },
 ];
 
 export const getFeaturedProjects = (): Project[] => {

@@ -13,7 +13,7 @@ export function Projects() {
   const featuredProjects = projects.filter(p => p.featured);
   const otherProjects = projects.filter(p => !p.featured);
 
-  const visibleOtherProjects = isExpanded ? otherProjects : otherProjects.slice(0, 4);
+  const visibleOtherProjects = isExpanded ? otherProjects : otherProjects.slice(0, 3);
 
   return (
     <section id="projects" className="py-20 px-4">
@@ -77,7 +77,7 @@ export function Projects() {
 
                 <div className="flex flex-wrap gap-2 px-2 pb-2">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 text-xs bg-white/5 border border-white/10 rounded-lg">
+                    <span key={tag} className="px-3 py-1 text-xs bg-purple-500/5 border border-white/10 rounded-lg">
                       {tag}
                     </span>
                   ))}
@@ -88,23 +88,31 @@ export function Projects() {
 
           {/* Other Projects with Animation */}
           <AnimatePresence mode="popLayout">
-            {visibleOtherProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.3, delay: index * 0.05 }}
-                className={index === 0 || index === 3 ? "lg:col-span-2" : ""}
-              >
-                <ProjectCard project={project} index={index} />
-              </motion.div>
-            ))}
+            {visibleOtherProjects.map((project, index) => {
+              // Mathematical grid balance logic:
+              // Row 1: Item 0 is col-span-2 (Takes up 1st slot), items 1 and 2 are 1 column each.
+              // Row 2: Items 3 and 4 are 1 column each, item 5 is col-span-2 (Takes up 3rd slot).
+              const isSpanned = index % 6 === 0 || index % 6 === 5;
+
+              return (
+                <motion.div
+                  key={project.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.3, delay: index * 0.05 }}
+                  className={isSpanned ? "lg:col-span-2" : ""}
+                >
+                  <ProjectCard project={project} index={index} />
+                </motion.div>
+              );
+            })}
           </AnimatePresence>
         </div>
 
         {/* 3. The Expand Button */}
-        {otherProjects.length > 4 && (
+        {otherProjects.length > 3 && (
           <div className="mt-12 flex justify-center">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
@@ -127,14 +135,14 @@ export function Projects() {
 }
 
 function ProjectCard({ project, index }: { project: any; index: number }) {
-  // Preserved Span Logic
-  const span = index === 0 || index === 3 ? "lg:col-span-2" : "";
+  // Preserved Span Logic utilizing the exact mathematical row balance sequence
+  const span = index % 6 === 0 || index % 6 === 5 ? "lg:col-span-2" : "";
 
   return (
     <GlassCard className={`group overflow-hidden w-full h-full ${span}`}>
       <div className="h-full flex flex-col">
         {project.image && (
-          <div className="absolute inset-0 z-0 opacity-10 group-hover:opacity-25 transition-opacity duration-500">
+          <div className="absolute inset-0 z-0 opacity-60 group-hover:opacity-10 transition-opacity duration-500">
             <Image
               src={project.image}
               alt=""
@@ -146,30 +154,30 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
 
         <div className="relative z-10 flex-1 flex flex-col p-2">
           <div className="flex items-start justify-between mb-3">
-            <h3 className="text-xl font-semibold group-hover:text-purple-300 transition-colors">
+            <h3 className="text-xl font-semibold text-transparent group-hover:text-white duration-500 transition-colors">
               {project.title}
             </h3>
-            <div className="flex gap-2 bg-zinc-900/50 backdrop-blur-md rounded-lg p-1">
+            <div className="flex gap-2 bg-zinc-900/0 group-hover:bg-zinc-900/50 backdrop-blur-none group-hover:backdrop-blur-md rounded-lg p-1 transition-opacity duration-500">
               {project.github && (
-                <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-white/10 rounded transition-colors">
-                  <Github className="w-4 h-4" />
+                <a href={project.github} target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-white/10 rounded">
+                  <Github className="w-5 h-5 text-transparent group-hover:text-white" />
                 </a>
               )}
               {project.link && (
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-white/10 rounded transition-colors">
-                  <ExternalLink className="w-4 h-4" />
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="p-1.5 hover:bg-white/10 rounded">
+                  <ExternalLink className="w-5 h-5 text-transparent group-hover:text-white" />
                 </a>
               )}
             </div>
           </div>
-          <p className="text-sm text-zinc-300 mb-4 line-clamp-3 bg-zinc-900/40 p-2 rounded-lg backdrop-blur-sm">
+          <p className="text-sm text-transparent group-hover:text-white duration-500 transition-colors mb-4 line-clamp-3 rounded-lg">
             {project.description}
           </p>
         </div>
 
         <div className="relative z-10 flex flex-wrap gap-2 mt-auto p-2">
           {project.tags.slice(0, 3).map((tag: string) => (
-            <span key={tag} className="px-2 py-1 text-[10px] uppercase tracking-wider bg-black/50 border border-white/10 rounded text-zinc-300">
+            <span key={tag} className="px-3 py-1 text-xs text-transparent group-hover:text-white/60 bg-transparent group-hover:bg-purple-500/10 transition-opacity duration-500 border border-transparent group-hover:border-white/10 rounded-lg">
               {tag}
             </span>
           ))}

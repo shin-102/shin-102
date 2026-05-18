@@ -34,6 +34,8 @@ const config: Config = {
         "slide-down": "slideDown 0.3s ease-out",
         "scale-in": "scaleIn 0.3s ease-out",
         "glow": "glow 2s ease-in-out infinite",
+        "letter": "letterAnim 4s linear infinite",
+        "transform-opacity": "transformAnim 2s infinite alternate cubic-bezier(0.6,0.8,0.5,1), opacityAnim 4s infinite",
       },
       keyframes: {
         fadeIn: {
@@ -55,6 +57,21 @@ const config: Config = {
         glow: {
           "0%, 100%": { opacity: "0.5" },
           "50%": { opacity: "1" },
+        },
+        transformAnim: {
+          "0%": { transform: "translate(-55%)" },
+          "100%": { transform: "translate(55%)" },
+        },
+        opacityAnim: {
+          "0%, 100%": { opacity: "0" },
+          "15%": { opacity: "1" },
+          "65%": { opacity: "0" },
+        },
+        letterAnim: {
+          "0%": { opacity: "0" },
+          "5%": { opacity: "1", textShadow: "0 0 4px #fff", transform: "scale(1.1) translateY(-2px)" },
+          "20%": { opacity: "0.2" },
+          "100%": { opacity: "0" },
         },
       },
     },

@@ -32,8 +32,16 @@ export function Skills() {
     other: "from-zinc-500/20 to-zinc-600/20 border-zinc-500/30",
   };
 
+  const categoryTextGradients = {
+    frontend: "from-blue-400 to-cyan-400",
+    backend: "from-green-400 to-emerald-400",
+    design: "from-purple-400 to-pink-400",
+    tools: "from-orange-400 to-yellow-400",
+    other: "from-zinc-400 to-zinc-500",
+  };
+
   return (
-    <section className="py-20 px-4">
+    <section id="skills" className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -42,7 +50,7 @@ export function Skills() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Tech Stack</h2>
-          <p className="text-zinc-400 text-lg">Technologies I work with daily</p>
+          <p className="text-zinc-400 text-lg">Technologies I worked with</p>
         </motion.div>
 
         {/* Category Grid */}
@@ -94,11 +102,11 @@ export function Skills() {
             {Object.entries(categories).map(([category, categorySkills]) => (
               categorySkills.length > 0 && (
                 <div key={category}>
-                  <div className="text-3xl font-bold text-emerald-400 mb-1">
+                  <div className={`text-3xl font-bold bg-gradient-to-r bg-clip-text text-transparent ${categoryTextGradients[category as keyof typeof categoryTextGradients]} mb-1`}>
                     {categorySkills.length}
                   </div>
                   <div className="text-sm text-zinc-500 capitalize">
-                    {category}
+                    {categoryLabels[category as keyof typeof categoryLabels]}
                   </div>
                 </div>
               )
@@ -134,7 +142,7 @@ function SkillCard({ skill, index }: { skill: any; index: number }) {
         <div className="relative flex flex-col items-center gap-3">
           {/* Icon */}
           {skill.icon && (
-            <div className="relative w-12 h-12 rounded-lg overflow-hidden bg-white/5 p-2 group-hover:bg-white/10 transition-colors">
+            <div className="relative w-12 h-12 rounded-lg overflow-hidden">
               <Image
                 src={skill.icon}
                 alt={skill.name}

@@ -20,13 +20,13 @@ export function Stats() {
     },
     {
       icon: Users,
-      value: "10+",
+      value: "30+",
       label: "Happy Clients",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: Trophy,
-      value: "2+",
+      value: "3+",
       label: "Years Experience",
       color: "from-orange-500 to-yellow-500",
     },

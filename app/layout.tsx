@@ -7,6 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Walid Hamyani | Portfolio | Junior Frontend Developer and Designer",
   description: "Building exceptional digital experiences with modern web technologies, with a focus on user experience and brand identity.",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({

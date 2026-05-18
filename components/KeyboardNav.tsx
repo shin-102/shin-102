@@ -49,7 +49,7 @@ export function KeyboardNav() {
   };
 
   return (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 flex flex-col gap-3 items-end group/pad">
+    <div className="fixed hidden right-6 top-1/2 -translate-y-1/2 z-50 md:flex flex-col gap-3 items-end group/pad">
       {/* Optional helper context text that appears when hovering near the pad */}
       <span className="text-[10px] font-mono text-zinc-500 tracking-widest uppercase opacity-0 group-hover/pad:opacity-100 transition-opacity duration-300 pr-1">
         Navigation Pad

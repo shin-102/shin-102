@@ -64,7 +64,7 @@ export function GitHubGraph() {
           )}
         </motion.div>
 
-        <div className="p-6 bg-zinc-900/5 backdrop-blur-md">
+        <div className="p-0 md:p-6 bg-zinc-900/5 backdrop-blur-md mt-40 md:mt-0">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}

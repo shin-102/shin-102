@@ -38,22 +38,41 @@ export function ContactForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (!validate()) return;
 
     setIsSubmitting(true);
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    // Build standard FormData payload expected by Web3Forms
+    const targetForm = e.currentTarget;
+    const submissionData = new FormData(targetForm);
 
-    // TODO: Integrate with EmailJS or API route
-    console.log("Form submitted:", formData);
+    // Web3Forms routes messages automatically to the email bound to this Access Key
+    submissionData.append("access_key", "1ed10118-0657-4573-a0dd-b9775fad0a67");
 
-    setIsSubmitting(false);
-    setFormData({ name: "", email: "", message: "" });
-    alert("Message sent! (This is a demo - integrate with your backend)");
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: submissionData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormData({ name: "", email: "", message: "" });
+        targetForm.reset();
+        alert("Message sent successfully!");
+      } else {
+        alert(data.message || "An error occurred while sending your message.");
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      alert("Network error. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -81,6 +100,14 @@ export function ContactForm() {
 
         <GlassCard>
           <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Honeypot field - completely invisible to real users, but tempting to spam bots */}
+            <input
+              type="checkbox"
+              name="botcheck"
+              className="hidden"
+              style={{ display: "none" }}
+            />
+
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
                 Name

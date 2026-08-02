@@ -217,7 +217,7 @@ export const projects: Project[] = [
     tags: ["Next.js", "Sanity", "Prisma", "PostgreSQL"],
     featured: false,
     complexity: 8,
-    link: "https://www.lamonacadileonardodavinci.com",
+    link: "https://la-monaca-di-leo.vercel.app",
     image: "https://v1.screenshot.11ty.dev/https%3A%2F%2Fwww.lamonacadileonardodavinci.com/large/",
   },
   {
@@ -277,21 +277,22 @@ export const experiences: Experience[] = [
 
 export const skills: Skill[] = [
   // Web Development / Frontend
-  { name: "React", category: "frontend", icon: "/icons/react.png" },
   { name: "TypeScript", category: "frontend", icon: "/icons/TypeScript.png" },
-  { name: "Tailwind CSS", category: "frontend", icon: "/icons/Tailwind CSS.png" },
+  { name: "React", category: "frontend", icon: "/icons/react.png" },
   { name: "Next.js", category: "frontend", icon: "/icons/Next.js.png" },
+  { name: "Nuxt", category: "frontend", icon: "/icons/Nuxt.png" },
+  { name: "Tailwind CSS", category: "frontend", icon: "/icons/Tailwind CSS.png" },
   { name: "Radix UI", category: "frontend", icon: "/icons/Radix.webp" },
   // { name: "Bootstrap", category: "frontend", icon: "/icons/BootstrapLogo.png" },
   // { name: "Sass", category: "frontend", icon: "/icons/Sass.png" },
 
   // Web Development / Backend
   { name: "Node.js", category: "backend", icon: "/icons/Node.js.png" },
-  // { name: "Express.js", category: "backend", icon: "/icons/Express.png" },
-  { name: "Nest.js", category: "backend", icon: "/icons/Nest.js.png" },
-  { name: "Prisma", category: "backend", icon: "/icons/prisma-svgrepo-com.png" },
   { name: "PostgreSQL", category: "backend", icon: "/icons/PostgresSQL.png" },
+  { name: "Prisma", category: "backend", icon: "/icons/prisma-svgrepo-com.png" },
+  { name: "Nest.js", category: "backend", icon: "/icons/Nest.js.png" },
   { name: "Sanity Studio", category: "backend", icon: "/icons/Sanity.png" },
+  { name: "Directus", category: "backend", icon: "/icons/Directus.png"},
   { name: "Firebase", category: "backend", icon: "/icons/Firebase.png" },
   // { name: "Deno", category: "backend", icon: "/icons/Deno.png" },
   // { name: "MongoDB", category: "backend", icon: "/icons/MongoDB.png" },

@@ -1,10 +1,36 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Code2, Users, Trophy, Zap } from "lucide-react";
+import { Code2, Trophy, Zap, GitCommit } from "lucide-react";
 import { projects, skills } from "@/lib/data";
+import { getGithubContributions } from "@/app/actions/github";
+import { useEffect, useState } from "react";
+
+const getYearsOfExperience = (startDateString: string): string => {
+  const startDate = new Date(startDateString);
+  const currentDate = new Date();
+  
+  const diffInMs = currentDate.getTime() - startDate.getTime();
+  const years = diffInMs / (1000 * 60 * 60 * 24 * 365.25);
+  
+  return `${years.toFixed(1)}+`;
+};
 
 export function Stats() {
+  const [commits, setCommits] = useState<string>("1,000+"); // Default fallback while loading
+
+  useEffect(() => {
+    getGithubContributions()
+      .then((data) => {
+        if (data?.totalCommits) {
+          setCommits(data.totalCommits);
+        }
+      })
+      .catch((err) => {
+        console.error("Failed to fetch commit count:", err);
+      });
+  }, []);
+
   const stats = [
     {
       icon: Code2,
@@ -19,14 +45,14 @@ export function Stats() {
       color: "from-emerald-500 to-green-500",
     },
     {
-      icon: Users,
-      value: "30+",
-      label: "Happy Clients",
+      icon: GitCommit,
+      value: commits,
+      label: "Git Commits",
       color: "from-purple-500 to-pink-500",
     },
     {
       icon: Trophy,
-      value: "3+",
+      value: getYearsOfExperience("2023-03-13"),
       label: "Years Experience",
       color: "from-orange-500 to-yellow-500",
     },

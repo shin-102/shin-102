@@ -1,10 +1,10 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { getSvgCommits } from "@/app/actions/github";
 import { motion } from "framer-motion";
 import { Code2, Trophy, Zap, GitCommit } from "lucide-react";
 import { projects, skills } from "@/lib/data";
-import { getGithubContributions } from "@/app/actions/github";
-import { useEffect, useState } from "react";
 
 const getYearsOfExperience = (startDateString: string): string => {
   const startDate = new Date(startDateString);
@@ -17,18 +17,10 @@ const getYearsOfExperience = (startDateString: string): string => {
 };
 
 export function Stats() {
-  const [commits, setCommits] = useState<string>("1,000+"); // Default fallback while loading
+  const [commits, setCommits] = useState<string>("312+");
 
   useEffect(() => {
-    getGithubContributions()
-      .then((data) => {
-        if (data?.totalCommits) {
-          setCommits(data.totalCommits);
-        }
-      })
-      .catch((err) => {
-        console.error("Failed to fetch commit count:", err);
-      });
+    getSvgCommits().then((count) => setCommits(count));
   }, []);
 
   const stats = [

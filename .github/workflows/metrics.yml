@@ -15,7 +15,7 @@ jobs:
           base: header, activity, community, repositories, metadata
           config_timezone: Africa/Casablanca
 
-          config_output: json
+          filename: github-metrics.svg
 
           # Contribution calendar
           plugin_isocalendar: yes
@@ -38,5 +38,5 @@ jobs:
 
           config_display: large
 
-          output_action: gist               # ← store in a Gist, not a commit
-          committer_gist: ${{ secrets.METRICS_GIST }}  # ← Gist ID goes here
+          output_action: commit             # commit the SVG straight into the repo
+          committer_branch: main
